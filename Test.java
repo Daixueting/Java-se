@@ -1,41 +1,19 @@
 import java.util.Scanner; 
-interface IMyInterface{
-	public static final int a =10;  //全局常量
-	public abstract void test();
-}
-interface IMessage{
-	public abstract void getMsg();
-}
-class MyInterface implements IMyInterface,IMessage{
-	public void test(){
-		 System.out.println(a);
-	}
-	public void getMsg(){
-		System.out.println(a);
-	}
-}
 public class Test{ 
-public static void main(String[] args) {
-	//向上转型
-	IMyInterface imyinterface=new MyInterface();
+public static void main(String[] args) throws NumberFormatException{
 	
-	IMessage imessage =(IMessage)imyinterface;
-	imyinterface.test();
-	imessage.getMsg();
-	System.out.println(MyInterface.a);
+	System.out.println(fristUpper("hello"));
+    
 	}
+	public static String fristUpper(String str){
+	//把第一个值变为大写
+	 String str1=str.substring(0,1).toUpperCase();
+	 //单取出str的第一个字母
+	 char[] a =str.toCharArray(0,1);
+	 String str2=new String(a);
+	 System.out.println(str2);
+	 System.out.println(str1);
+	 String str3=str.replaceFirst(str2,str1);
+	 return str3;
+ }
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
