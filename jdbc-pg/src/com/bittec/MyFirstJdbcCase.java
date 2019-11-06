@@ -35,11 +35,11 @@ public class MyFirstJdbcCase {
             Connection connection= DriverManager.getConnection(url);
 
             //3.创建命令
-            Statement statement=connection.createStatement();
+            Statement statement=connection.createStatement();  //connection的静态方法来获取对象
             //4.准备sql语句  避险*的存在
             String sql="select id,name,created_time,modify_time from memo_group";
             //5.执行语句
-            ResultSet resultSet=statement.executeQuery(sql);
+            ResultSet resultSet=statement.executeQuery(sql);  //statement对象方法来获取对象
             //6.处理数据
 
             while (resultSet.next()){
